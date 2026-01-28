@@ -780,3 +780,70 @@ a {
         padding: 6px 12px;
     }
 }
+/* --- Hover Efektleri --- */
+
+/* 1. Kitap Kartı Hover Efekti */
+.book-item {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px; /* Kenarları yumuşatır */
+    overflow: hidden;
+}
+
+.book-item:hover {
+    transform: translateY(-10px); /* Kartı hafif yukarı kaldırır */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
+}
+
+/* 2. Kitap Kapağı Zoom Efekti */
+.book-cover {
+    overflow: hidden; /* Taşmaları önler */
+}
+
+.book-cover img {
+    transition: transform 0.5s ease;
+}
+
+.book-item:hover .book-cover img {
+    transform: scale(1.08); /* Resme hafif zoom yapar */
+}
+
+/* 3. Satın Al Butonu Hover Efekti */
+.book-buy-btn {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.book-buy-btn:not(.book-buy-btn-disabled):hover {
+    background-color: #5d4037; /* Mevcut rengin bir ton koyusu (örnek) */
+    padding-left: 25px; /* Metni hafif sağa kaydırır */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* 4. Devre Dışı Buton (Link Bekleniyor) İçin */
+.book-buy-btn-disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+/* 5. Navigasyon Linkleri Alt Çizgi Efekti */
+.main-nav ul li a {
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.main-nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background-color: #8d6e63; /* Toprak tonu çizgisi */
+    transition: width 0.3s ease;
+}
+
+.main-nav ul li a:hover::after,
+.main-nav ul li a.active::after {
+    width: 100%;
+}
