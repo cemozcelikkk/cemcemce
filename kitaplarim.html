@@ -31,13 +31,13 @@
         </div>
     </a>
 
-    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
+    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat" id="menuToggle">
         <span></span>
         <span></span>
         <span></span>
     </button>
 
-    <nav class="main-nav">
+    <nav class="main-nav" id="mainNav">
         <ul>
             <li><a href="index.html">ANA SAYFA</a></li>
             <li><a href="calismalarim.html">ÇALIŞMALARIM</a></li>
@@ -58,7 +58,7 @@
             <!-- Kitap 1 -->
             <div class="book-item">
                 <div class="book-cover">
-                    <img src="basarinin-pin-kodu.jpeg" alt="Başarının Pin Kodu kitap kapağı" loading="lazy">
+                    <img src="basasriM.jpeg" alt="Başarının Pin Kodu kitap kapağı" loading="lazy">
                 </div>
                 <div class="book-info">
                     <h3 class="book-title">Başarının Pin Kodu</h3>
@@ -220,7 +220,7 @@
                 <p>Uzman Psikolog & Yazar</p>
             </div>
             <div class="footer-contact">
-                <p><a href="/cdn-cgi/l/email-protection#7303001a181c1f1c141016051601001c1d1e160933141e121a1f5d101c1e"><span class="__cf_email__" data-cfemail="6212110b090d0e0d050107140710110d0c0f071822050f030b0e4c010d0f">[email&#160;protected]</span></a></p>
+                <p><a href="mailto:psikologceversonmez@gmail.com">psikologceversonmez@gmail.com</a></p>
                 <p><a href="tel:+905394329781">+90 539 432 97 81</a></p>
             </div>
         </div>
@@ -231,14 +231,34 @@
 </footer>
 
 <!-- Mobile Menu Script -->
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
+<script>
+(function() {
+    'use strict';
     
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenuToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
+    const menuToggle = document.getElementById('menuToggle');
+    const mainNav = document.getElementById('mainNav');
+    
+    if (menuToggle && mainNav) {
+        menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            this.classList.toggle('active');
+            mainNav.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        });
 
-    document.querySelectorAll('.main-nav a').forEach(lin
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                menuToggle.classList.remove('active');
+                mainNav.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            });
+        });
+    }
+})();
+</script>
+
+</body>
+</html>
