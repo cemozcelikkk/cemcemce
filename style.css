@@ -72,7 +72,7 @@ a {
     background-color: var(--bg-color);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 999;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -113,7 +113,8 @@ a {
     border: none;
     cursor: pointer;
     padding: 8px;
-    z-index: 1001;
+    z-index: 1002;
+    position: relative;
 }
 
 .mobile-menu-toggle span {
@@ -184,6 +185,8 @@ a {
     min-height: calc(100vh - 100px);
     display: flex;
     align-items: center;
+    background: linear-gradient(135deg, #f9f7f2 0%, #f0ede5 50%, #f9f7f2 100%);
+    position: relative;
 }
 
 .hero-grid {
@@ -211,6 +214,20 @@ a {
 
 .hero-image {
     text-align: center;
+    position: relative;
+}
+
+.hero-image::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(143, 161, 148, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .hero-image img {
@@ -218,8 +235,10 @@ a {
     max-width: 500px;
     height: auto;
     border-radius: 12px;
-    box-shadow: var(--shadow-lg);
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.1));
 }
 
 /* ==========================================
@@ -419,16 +438,34 @@ a {
     margin-bottom: 80px;
     padding-bottom: 60px;
     border-bottom: 1px solid var(--border-color);
+    transition: var(--transition);
 }
 
 .book-item:last-child {
     border-bottom: none;
 }
 
+.book-item:hover {
+    transform: translateX(8px);
+}
+
+.book-cover {
+    transition: var(--transition);
+}
+
+.book-item:hover .book-cover {
+    transform: scale(1.05) rotate(-2deg);
+}
+
 .book-cover img {
     width: 100%;
     border-radius: 8px;
     box-shadow: var(--shadow-md);
+    transition: var(--transition);
+}
+
+.book-item:hover .book-cover img {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
 }
 
 .book-title {
@@ -436,12 +473,57 @@ a {
     font-size: clamp(1.5rem, 3vw, 2.2rem);
     margin-bottom: 12px;
     color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.book-item:hover .book-title {
+    color: var(--accent-color);
 }
 
 .book-meta {
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     color: var(--text-lighter);
+    margin-bottom: 20px;
+}
+
+.book-buy-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 24px;
+    background-color: var(--accent-color);
+    color: var(--white);
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 50px;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(143, 161, 148, 0.25);
+    text-decoration: none;
+}
+
+.book-buy-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.book-buy-btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(143, 161, 148, 0.35);
+}
+
+.book-buy-btn-disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.book-buy-btn-disabled:hover {
+    background-color: #ccc;
+    transform: none;
+    box-shadow: 0 4px 12px rgba(143, 161, 148, 0.25);
 }
 
 /* Experience */
@@ -556,7 +638,7 @@ a {
     letter-spacing: 0.5px;
     border-radius: 50px;
     box-shadow: 0 12px 28px rgba(37, 211, 102, 0.4);
-    z-index: 999;
+    z-index: 998;
     transition: var(--transition);
     display: flex;
     align-items: center;
@@ -689,7 +771,7 @@ a {
         background: var(--white);
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
         transition: right 0.3s ease;
-        z-index: 1000;
+        z-index: 1001;
         padding: 80px 32px 32px;
     }
 
@@ -779,71 +861,4 @@ a {
         font-size: 0.75rem;
         padding: 6px 12px;
     }
-}
-/* --- Hover Efektleri --- */
-
-/* 1. Kitap Kartı Hover Efekti */
-.book-item {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 8px; /* Kenarları yumuşatır */
-    overflow: hidden;
-}
-
-.book-item:hover {
-    transform: translateY(-10px); /* Kartı hafif yukarı kaldırır */
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); /* Hafif gölge ekler */
-}
-
-/* 2. Kitap Kapağı Zoom Efekti */
-.book-cover {
-    overflow: hidden; /* Taşmaları önler */
-}
-
-.book-cover img {
-    transition: transform 0.5s ease;
-}
-
-.book-item:hover .book-cover img {
-    transform: scale(1.08); /* Resme hafif zoom yapar */
-}
-
-/* 3. Satın Al Butonu Hover Efekti */
-.book-buy-btn {
-    transition: all 0.3s ease;
-    position: relative;
-    overflow: hidden;
-}
-
-.book-buy-btn:not(.book-buy-btn-disabled):hover {
-    background-color: #5d4037; /* Mevcut rengin bir ton koyusu (örnek) */
-    padding-left: 25px; /* Metni hafif sağa kaydırır */
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* 4. Devre Dışı Buton (Link Bekleniyor) İçin */
-.book-buy-btn-disabled {
-    opacity: 0.7;
-    cursor: not-allowed;
-}
-
-/* 5. Navigasyon Linkleri Alt Çizgi Efekti */
-.main-nav ul li a {
-    position: relative;
-    transition: color 0.3s ease;
-}
-
-.main-nav ul li a::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    bottom: -5px;
-    left: 0;
-    background-color: #8d6e63; /* Toprak tonu çizgisi */
-    transition: width 0.3s ease;
-}
-
-.main-nav ul li a:hover::after,
-.main-nav ul li a.active::after {
-    width: 100%;
 }
