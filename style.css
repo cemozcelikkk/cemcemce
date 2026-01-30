@@ -715,6 +715,37 @@ a {
 }
 
 /* ==========================================
+   INSTAGRAM ICON - FIXED
+   ========================================== */
+.social-instagram {
+    display: flex;
+    align-items: center;
+}
+
+.social-instagram a {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+}
+
+.social-instagram img {
+    width: 16px;
+    height: 16px;
+    display: block;
+    opacity: 0.7;
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.social-instagram a:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+.social-instagram a::after {
+    display: none;
+}
+
+/* ==========================================
    RESPONSIVE - TABLET
    ========================================== */
 @media (max-width: 900px) {
@@ -799,6 +830,10 @@ a {
         font-size: 0.85rem;
     }
 
+    .social-instagram a {
+        padding: 18px 0;
+    }
+
     body.menu-open {
         overflow: hidden;
     }
@@ -866,22 +901,4 @@ a {
         font-size: 0.75rem;
         padding: 6px 12px;
     }
-}
-/* Instagram icon */
-.social-instagram {
-  display: flex;
-  align-items: center;
-}
-
-.social-instagram img {
-  width: 20px;
-  height: 20px;
-  display: block;
-  opacity: 0.65;
-  transition: transform 0.25s ease, opacity 0.25s ease;
-}
-
-.social-instagram img:hover {
-  opacity: 1;
-  transform: scale(1.15);
 }
