@@ -867,32 +867,21 @@ a {
         padding: 6px 12px;
     }
 }
-/* Instagram Icon */
+/* Instagram icon */
 .social-instagram {
-  margin-left: 20px;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
 
 .social-instagram img {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   display: block;
-  opacity: 0.7;
+  opacity: 0.65;
   transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-/* Hover efekti */
-.social-instagram:hover img {
+.social-instagram img:hover {
   opacity: 1;
   transform: scale(1.15);
-}
-
-/* Mobil */
-@media (max-width: 768px) {
-  .social-instagram img {
-    width: 20px;
-    height: 20px;
-  }
 }
