@@ -867,55 +867,32 @@ a {
         padding: 6px 12px;
     }
 }
-/* Instagram icon FIX */
-.social-instagram {
-    margin-left: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-}
-
-.social-instagram img {
-    width: 24px;
-    height: 24px;
-    max-width: 24px;
-    max-height: 24px;
-    object-fit: contain;
-    display: block;
-}
-
-/* Hover */
-.social-instagram:hover img {
-    transform: scale(1.15);
-    transition: transform 0.25s ease;
-}
-
-/* Mobil */
-@media (max-width: 768px) {
-    .social-instagram {
-        width: 22px;
-        height: 22px;
-    }
-
-    .social-instagram img {
-        width: 22px;
-        height: 22px;
-    }
-}
+/* Instagram Icon */
 .social-instagram {
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .social-instagram img {
   width: 22px;
   height: 22px;
+  display: block;
   opacity: 0.7;
-  transition: all 0.3s ease;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-.social-instagram img:hover {
+/* Hover efekti */
+.social-instagram:hover img {
   opacity: 1;
-  transform: scale(1.1);
+  transform: scale(1.15);
+}
+
+/* Mobil */
+@media (max-width: 768px) {
+  .social-instagram img {
+    width: 20px;
+    height: 20px;
+  }
 }
