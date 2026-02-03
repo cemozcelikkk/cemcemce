@@ -61,29 +61,6 @@ body {
     position: relative;
 }
 
-/* ... existing styles ... */
-
-@media (max-width: 768px) {
-    /* ... existing mobile styles ... */
-
-    /* Appointment Button Safe Area */
-    .appointment-cta {
-        right: 16px;
-        /* Slightly closer to edge but safe */
-        bottom: 24px;
-        padding: 10px 20px;
-        /* Slightly smaller padding */
-        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
-        z-index: 9999;
-        /* Ensure it's on top */
-    }
-
-    .appointment-cta span {
-        font-size: 0.85rem;
-        display: inline-block;
-    }
-}
-
 img {
     max-width: 100%;
     height: auto;
@@ -730,16 +707,18 @@ p {
 
     /* Appointment Button Safe Area */
     .appointment-cta {
-        right: 20px;
+        right: 16px;
+        /* Slightly closer to edge but safe */
         bottom: 24px;
-        padding: 12px 20px;
+        padding: 10px 20px;
+        /* Slightly smaller padding */
         box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        z-index: 9999;
+        /* Ensure it's on top */
     }
 
     .appointment-cta span {
-        display: none;
-        /* Hide text on small mobile, show icon only? Optional. Keeping text for now */
-        display: inline;
         font-size: 0.85rem;
+        display: inline-block;
     }
 }
