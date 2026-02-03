@@ -45,6 +45,9 @@ html {
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    width: 100%;
 }
 
 body {
@@ -53,6 +56,32 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     overflow-x: hidden;
+    /* Prevent horizontal scroll */
+    width: 100%;
+    position: relative;
+}
+
+/* ... existing styles ... */
+
+@media (max-width: 768px) {
+    /* ... existing mobile styles ... */
+
+    /* Appointment Button Safe Area */
+    .appointment-cta {
+        right: 16px;
+        /* Slightly closer to edge but safe */
+        bottom: 24px;
+        padding: 10px 20px;
+        /* Slightly smaller padding */
+        box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+        z-index: 9999;
+        /* Ensure it's on top */
+    }
+
+    .appointment-cta span {
+        font-size: 0.85rem;
+        display: inline-block;
+    }
 }
 
 img {
