@@ -1,146 +1,197 @@
 <!DOCTYPE html>
 <html lang="tr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Cevher Sönmez'in çalıştığı kuruluşlar ve referansları">
+    <meta name="description" content="Cevher Sönmez'in çalıştığı kuruluşlar, üniversiteler ve kurumsal referansları.">
     <title>Referanslar | Cevher Sönmez</title>
 
+    <link rel="icon" type="image/png" href="/android-chrome-512x512.png">
+
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        .reference-category {
+            margin-bottom: 60px;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
+            display: inline-block;
+        }
+
+        .references-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 20px;
+        }
+
+        .reference-item {
+            background: var(--white);
+            padding: 20px 24px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            font-weight: 500;
+            transition: var(--transition-base);
+            display: flex;
+            align-items: center;
+            min-height: 80px;
+        }
+
+        .reference-item:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+            color: var(--text-primary);
+        }
+    </style>
 </head>
+
 <body>
 
-<!-- WhatsApp Randevu Butonu -->
-<a href="https://wa.me/905411300057" class="appointment-cta" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp üzerinden randevu al">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path>
-    </svg>
-    Randevu Al
-</a>
-
-<!-- Header -->
-<header class="main-header">
-    <a href="index.html" class="logo-link">
-        <div class="logo">
-            Cevher SÖNMEZ
-            <span class="sub-logo">PSİKOLOG</span>
-        </div>
+    <!-- WhatsApp Randevu Butonu -->
+    <a href="https://wa.me/905411300057" class="appointment-cta" target="_blank" rel="noopener noreferrer"
+        aria-label="WhatsApp üzerinden randevu al">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"></path>
+        </svg>
+        <span>Randevu Al</span>
     </a>
 
-    <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <!-- Header -->
+    <header class="main-header">
+        <a href="index.html" class="logo-link">
+            <div class="logo">
+                Cevher Sönmez
+                <span class="sub-logo">Uzman Psikolog</span>
+            </div>
+        </a>
 
-   <nav class="main-nav">
-    <ul>
-        <li><a href="./index.html" class="active">ANA SAYFA</a></li>
-        <li><a href="./calismalarim.html">ÇALIŞMALARIM</a></li>
-        <li><a href="./kitaplarim.html">KİTAPLARIM</a></li>
-        <li><a href="./tecrubelerim.html">İŞ TECRÜBELERİM</a></li>
-        <li><a href="./referanslar.html">REFERANSLARIM</a></li>
-        <li><a href="./iletisim.html">İLETİŞİM</a></li>
+        <button class="mobile-menu-toggle" aria-label="Menüyü aç/kapat">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
 
-        <!-- Instagram -->
-        <li class="social-instagram">
-            <a href="https://www.instagram.com/pskcevhersonmez/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <img src="./Instagram_icon.png" alt="Instagram" width="16" height="16">
-            </a>
-        </li>
-    </ul>
-</nav>
-</header>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="./index.html">Ana Sayfa</a></li>
+                <li><a href="./calismalarim.html">Çalışmalarım</a></li>
+                <li><a href="./kitaplarim.html">Kitaplarım</a></li>
+                <li><a href="./tecrubelerim.html">Tecrübelerim</a></li>
+                <li><a href="./referanslar.html" class="active">Referanslar</a></li>
+                <li><a href="./iletisim.html">İletişim</a></li>
 
-<!-- Referanslar Section -->
-<section class="references-section">
-    <div class="container">
-        <div class="references-container">
-            <h2 class="section-title">Referanslar</h2>
+                <!-- Instagram -->
+                <li class="social-instagram">
+                    <a href="https://www.instagram.com/pskcevhersonmez/" target="_blank" rel="noopener noreferrer"
+                        aria-label="Instagram">
+                        <img src="./Instagram_icon.png" alt="Instagram" width="20" height="20">
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-            <div class="references-grid">
+    <!-- Referanslar Section -->
+    <section class="references-section section-padding">
+        <div class="container">
+            <h2 class="section-title animate-fade-up">Güçlü Referanslar</h2>
+
+            <div class="references-container">
+
                 <!-- Eğitim Kurumları -->
-                <div class="reference-item">TED Okulları</div>
-                <div class="reference-item">Final Okulları</div>
-                <div class="reference-item">Yeditepe Okulları</div>
-                <div class="reference-item">Mektebim Okulları</div>
-
-                <!-- Üniversiteler -->
-                <div class="reference-item">Hacettepe Üniversitesi</div>
-                <div class="reference-item">İstanbul Aydın Üniversitesi</div>
-                <div class="reference-item">İstanbul Gelişim Üniversitesi</div>
-                <div class="reference-item">İstanbul Beykent Üniversitesi</div>
-                <div class="reference-item">İstanbul Esenyurt Üniversitesi</div>
+                <div class="reference-category animate-fade-up delay-100">
+                    <h3 class="category-title">Eğitim & Akademi</h3>
+                    <div class="references-grid">
+                        <div class="reference-item">TED Okulları</div>
+                        <div class="reference-item">Final Okulları</div>
+                        <div class="reference-item">Yeditepe Okulları</div>
+                        <div class="reference-item">Mektebim Okulları</div>
+                        <div class="reference-item">Hacettepe Üniversitesi</div>
+                        <div class="reference-item">İstanbul Aydın Üniversitesi</div>
+                        <div class="reference-item">İstanbul Gelişim Üniversitesi</div>
+                        <div class="reference-item">İstanbul Beykent Üniversitesi</div>
+                    </div>
+                </div>
 
                 <!-- Resmi Kurumlar -->
-                <div class="reference-item">Azerbaycan Cumhurbaşkanlığı</div>
-                <div class="reference-item">Türkiye Milli Paralimpik Komitesi</div>
-                <div class="reference-item">T.C. Sağlık Bakanlığı</div>
-                <div class="reference-item">T.C. Adalet Bakanlığı</div>
-                <div class="reference-item">T.C. Millî Eğitim Bakanlığı</div>
-
-                <!-- Kurumsal -->
-                <div class="reference-item">Denizbank Genel Müdürlüğü – Eğitim Birimi</div>
-                <div class="reference-item">DEDAŞ (Diyarbakır Elektrik Dağıtım A.Ş.)</div>
+                <div class="reference-category animate-fade-up delay-200">
+                    <h3 class="category-title">Resmî Kurumlar</h3>
+                    <div class="references-grid">
+                        <div class="reference-item">Azerbaycan Cumhurbaşkanlığı</div>
+                        <div class="reference-item">T.C. Sağlık Bakanlığı</div>
+                        <div class="reference-item">T.C. Adalet Bakanlığı</div>
+                        <div class="reference-item">T.C. Millî Eğitim Bakanlığı</div>
+                        <div class="reference-item">Türkiye Milli Paralimpik Komitesi</div>
+                    </div>
+                </div>
 
                 <!-- Medya & Yayın -->
-                <div class="reference-item">Posta Gazetesi</div>
-                <div class="reference-item">Hürriyet Gazetesi</div>
-                <div class="reference-item">Nemesis Yayınları</div>
-                <div class="reference-item">Destek Yayınları</div>
+                <div class="reference-category animate-fade-up delay-300">
+                    <h3 class="category-title">Medya & Yayıncılık</h3>
+                    <div class="references-grid">
+                        <div class="reference-item">Posta Gazetesi</div>
+                        <div class="reference-item">Hürriyet Gazetesi</div>
+                        <div class="reference-item">Nemesis Yayınları</div>
+                        <div class="reference-item">Destek Yayınları</div>
+                        <div class="reference-item">CNN TÜRK</div>
+                        <div class="reference-item">HABER TÜRK</div>
+                        <div class="reference-item">TRT</div>
+                        <div class="reference-item">NTV</div>
+                    </div>
+                </div>
 
-                <!-- TV Kanalları (Geniş) -->
-                <div class="reference-item reference-wide">
-                    Ekol TV, Star TV, Haber Global TV, TRT, CNN TÜRK, HABER TÜRK,
-                    SHOW TV, Bloomberg TV
+                <!-- Kurumsal -->
+                <div class="reference-category animate-fade-up delay-100">
+                    <h3 class="category-title">Kurumsal</h3>
+                    <div class="references-grid">
+                        <div class="reference-item">Denizbank Genel Müdürlüğü</div>
+                        <div class="reference-item">DEDAŞ</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h4>Cevher Sönmez</h4>
+                    <p>Uzman Psikolog & Yazar</p>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:psikologceversonmez@gmail.com">psikologceversonmez@gmail.com</a>
+                    <a href="tel:+905394329781">+90 541 130 00 57</a>
                 </div>
             </div>
-        </div>
-    </div>
-</section>
-
-<!-- Footer -->
-<footer class="main-footer">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-info">
-                <h4>Cevher Sönmez</h4>
-                <p>Uzman Psikolog & Yazar</p>
-            </div>
-            <div class="footer-contact">
-                <p><a href="mailto:psikologceversonmez@gmail.com">psikologceversonmez@gmail.com</a></p>
-                <p><a href="tel:+905394329781">+90 539 432 97 81</a></p>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Cevher Sönmez. Tüm hakları saklıdır.</p>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Cevher Sönmez. Tüm hakları saklıdır.</p>
-        </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Mobile Menu Script -->
-<script>
-    const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
-    const mainNav = document.querySelector('.main-nav');
-    
-    mobileMenuToggle.addEventListener('click', () => {
-        mobileMenuToggle.classList.toggle('active');
-        mainNav.classList.toggle('active');
-        document.body.classList.toggle('menu-open');
-    });
-
-    document.querySelectorAll('.main-nav a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenuToggle.classList.remove('active');
-            mainNav.classList.remove('active');
-            document.body.classList.remove('menu-open');
-        });
-    });
-</script>
+    <!-- Scripts -->
+    <script src="./script.js"></script>
 
 </body>
+
 </html>
